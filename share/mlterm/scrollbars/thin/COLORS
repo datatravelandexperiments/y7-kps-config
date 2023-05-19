@@ -1,0 +1,18 @@
+#!/bin/sh
+
+while read color image
+do
+  ppmmake "$color" 8 8 | pnmtopng >$image
+done <<EOF
+gray95  bg_body.png
+#FF0000 bg_bottom.png
+#00FF00 bg_top.png
+#00FFFF button_down.png
+#006666 button_down_pressed.png
+#00FFFF button_up.png
+#006666 button_up_pressed.png
+gray80  slider_body.png
+#FF00FF slider_bottom.png
+black   slider_knob.png
+#00FFFF slider_top.png
+EOF

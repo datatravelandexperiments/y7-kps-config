@@ -1,0 +1,97 @@
+\33[1~    goto-line
+\33\33    quit
+\33[4~    goto-end
+\33[5~    back-screen
+\33[6~    forw-screen
+\33[A     back-line
+\33?      back-search *
+\33^B     back-bracket
+\33[B     forw-line
+\33[C     next-file
+\33[D     prev-file
+\33^F     forw-bracket
+\33/      forw-search *
+\33>      goto-end
+\33<      goto-line
+\33[H     goto-line
+\33n      repeat-search-all
+\33N      reverse-search-all
+\33[U     forw-screen
+\33v      back-screen
+\33[V     back-screen
+\33[Y     goto-end
+\40       forw-screen
+^A        goto-line
+)         back-bracket ()
+]         back-bracket []
+}         back-bracket {}
+<         back-screen
+'         back-scroll
+?         back-search
+b         back-screen
+^B        back-screen
+d         forw-scroll
+^D        forw-scroll
+_         display-option
+:e        examine
+E         examine
+e         forw-line
+^E        forw-line
+F         forw-forever
+f         forw-screen
+^F        forw-screen
++         firstcmd
+(         forw-bracket ()
+[         forw-bracket []
+{         forw-bracket {}
+>         forw-screen
+/         forw-search
+:f        status
+G         goto-end
+g         goto-line
+'         goto-mark
+^G        status
+h         help
+H         help
+j         forw-line
+J         forw-line-force
+k         back-line
+^K        back-line
+K         back-line-force
+^L        repaint
+m         set-mark
+^N        forw-line
+:n        next-file
+n         repeat-search
+N         reverse-search
+^P        back-line
+%         percent
+P         goto-end
+|         pipe
+p         percent
+:p        prev-file
+:q        quit
+q         quit
+:Q        quit
+r         repaint
+^R        repaint
+R         repaint-flush
+!         shell
+=         status
+s         toggle-option o
+-         toggle-option
+:t        toggle-option t
+u         back-scroll
+^U        back-scroll
+^V        forw-screen
+V         version
+v         visual
+w         back-window
+:x        index-file
+^X^V      examine
+^X^X      goto-mark
+y         back-line
+^Y        back-line
+Y         back-line-force
+z         forw-window
+ZZ        quit

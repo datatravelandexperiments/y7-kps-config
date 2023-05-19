@@ -1,0 +1,13 @@
+set -o ignoreeof
+
+if [[ -n $VISUAL ]]
+then
+    case $VISUAL in
+    *macs*) set -o emacs;;
+    *vi*)   set -o vi;;
+    esac
+else
+    set -o vi
+fi
+
+# vim:set filetype=sh et sts=4 sw=4 ai noci nosi:

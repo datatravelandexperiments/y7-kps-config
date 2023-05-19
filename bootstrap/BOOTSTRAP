@@ -1,0 +1,104 @@
+#!/bin/sh
+
+# Requires Python ≥ 3.11
+
+##### Configuration
+
+SHARE=${XDG_DATA_HOME:-$HOME/.local/share}
+
+Y7_SRC='ssh://kevin@datatravelandexperiments.com:1122/~/doc/git/y7'
+Y7_DST="$SHARE/y7"
+
+GEPARE_SRC='ssh://kevin@datatravelandexperiments.com:1122/~/doc/git/gepare.git'
+GEPARE_DST="${SHARE}/gepare"
+# GEPARE_PIP=pipx
+
+##### End of configuration
+
+KSH=$(command -v ksh)
+KSH93=$(command -v ksh)
+if test -x "$KSH" && test -x "$KSH93"
+then
+    :
+elif test -x "$KSH"
+then
+    mkdir -p ~/opt/prefer/bin
+    ln -s "$KSH" ~/opt/prefer/bin/ksh93
+elif test -x "$KSH93"
+then
+    mkdir -p ~/opt/prefer/bin
+    ln -s "$KSH93" ~/opt/prefer/bin/ksh
+else
+    echo >&2 "ksh is required"
+    exit 1
+fi
+
+PYTHON=$(command -v python)
+PYTHON3=$(command -v python3)
+if test -x $PYTHON
+then
+    if ! $PYTHON -c 'import sys; sys.exit(sys.version_info < (3, 11))'
+    then
+        PYTHON=
+    fi
+fi
+if test -x $PYTHON3
+then
+    if ! $PYTHON3 -c 'import sys; sys.exit(sys.version_info < (3, 11))'
+    then
+        PYTHON3=
+    fi
+fi
+if test -x "$PYTHON" && test -x "$PYTHON3"
+then
+    :
+elif test -x "$PYTHON"
+then
+    mkdir -p ~/opt/prefer/bin
+    ln -s "$PYTHON" ~/opt/prefer/bin/python3
+elif test -x "$PYTHON3"
+then
+    mkdir -p ~/opt/prefer/bin
+    ln -s "$PYTHON3" ~/opt/prefer/bin/python
+else
+    echo >&2 "python 3.11 or later is required"
+    exit 1
+fi
+
+if test -d ~/opt/prefer/bin
+then
+    PATH="$HOME/opt/prefer/bin:$PATH"
+fi
+
+: ${XDG_CONFIG_HOME:=$HOME/.config}
+: ${XDG_DATA_HOME:=$HOME/.local/share}
+export XDG_CONFIG_HOME
+export XDG_DATA_HOME
+
+set -e
+mkdir -p "$SHARE"
+mkdir -p "$Y7_DST"
+
+if ! test -d "$Y7_DST/kps-config"
+then
+    git clone "$Y7_SRC/y7-kps-config.git" "$Y7_DST/kps-config"
+fi
+
+if test -n "$GEPARE_SRC"
+then
+    if ! test -d "$GEPARE_DST"
+    then
+        git clone "$GEPARE_SRC" "$GEPARE_DST"
+    fi
+    PATH="$PATH:$GEPARE_DST/bin"
+elif test -n "$GEPARE_PIP"
+then
+    $GEPARE_PIP --user install gepare
+fi
+
+gepare --refresh --list "$Y7_DST/kps-config/packages.toml"
+
+Y7SYS="$Y7_DST/y7"
+export Y7SYS
+"$Y7SYS/bin/y7-install-package-files" -y "$Y7_DST/y7"
+"$Y7SYS/bin/y7-install-package-files" -y "$Y7_DST/kps-config"

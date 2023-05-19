@@ -1,0 +1,4 @@
+function kk
+{
+    flash -p -s $? "$@"
+}

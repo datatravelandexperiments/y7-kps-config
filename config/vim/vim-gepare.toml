@@ -1,0 +1,16 @@
+[global]
+config_dir = '{CONFIG_HOME}/vim'
+dst = '{config_dir}/pack/{vcs}/opt/{name}'
+packadd = 'packadd!'
+load = false
+
+[output]
+global.keys = ['config_dir']
+
+[list.neo]
+file = '{config_dir}/neo-packages.vim'
+package.items = {packadd = '{packadd} {name}'}
+
+[list.vim]
+file = '{config_dir}/vim-packages.vim'
+package.items = {packadd = '{packadd} {name}'}

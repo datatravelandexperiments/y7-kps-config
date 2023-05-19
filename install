@@ -1,0 +1,37 @@
+# XCompose
+y7installfile --home dotfiles/XCompose .XCompose
+
+# less
+y7installfile --config config/less/options less/
+y7installfile --config config/less/lesskey lesskey
+y7installfile --home share/less/lessfilter .lessfilter
+
+# mlterm
+for i in config/mlterm/*
+do
+    y7installfile --config $i mlterm/
+done
+for i in share/mlterm/*
+do
+    y7installfile --config -sc $i mlterm/
+done
+y7installfile --home --symlink --from-config mlterm .mlterm
+
+# prompt
+y7installfile --config config/prompt
+
+# ripgrep
+y7installfile --config config/ripgrep ripgrep
+
+# stty
+y7installfile --config config/stty
+
+#vim
+y7installfile --config config/vim/vimrc vim/
+y7installfile --config config/vim/after vim/
+y7installfile --config config/vim/vim-gepare.toml vim/
+y7installfile --config config/vim/vim-packages.toml vim/
+y7installfile --config config/vim/get_packages vim/
+y7installfile --home --symlink --from-config vim .vim
+bootstrap ||
+    (cd "$(y7findconfig vim)" && test -f get_packages && sh ./get_packages)

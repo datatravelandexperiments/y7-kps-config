@@ -1,0 +1,4 @@
+function lrt
+{
+    ls -qilrtL "$@"
+}

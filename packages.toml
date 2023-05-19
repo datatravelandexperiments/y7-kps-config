@@ -1,0 +1,59 @@
+[global]
+load = 'yes'
+Y7SRC = 'https://codeberg.org/datatravelandexperiments/'
+Y7DST = '{DATA_HOME}/y7'
+DTE_HG = 'ssh://kevin@datatravelandexperiments.com:1122/doc/hg'
+
+[list.y7rc]
+file = '{CONFIG_HOME}/y7/y7rc'
+package.items = {use = 'use {name}'}
+
+[list.install]
+file = 'INSTALL'
+package.items = {use = 'cd "{dst}" && {install}'}
+
+[package.y7]
+src = '{Y7SRC}/y7.git'
+dst = '{Y7DST}/y7'
+
+[template.y7-package]
+load = 'y7rc'
+src = '{Y7SRC}/y7-{name}.git'
+dst = '{Y7DST}/{name}'
+
+[package]
+kps-config.template = 'y7-package'
+cd.template = 'y7-package'
+go.template = 'y7-package'
+less.template = 'y7-package'
+manpath.template = 'y7-package'
+prompt.template = 'y7-package'
+ripgrep.template = 'y7-package'
+sbin.template = 'y7-package'
+stty.template = 'y7-package'
+terminfo.template = 'y7-package'
+
+# Others
+
+[package.pandoc-terminal-writer]
+src = 'https://github.com/kpschoedel/pandoc-terminal-writer.git'
+dst = '{DATA_HOME}/pandoc-terminal-writer'
+
+[package.terminfosrc]
+load = 'install'
+install = './install'
+vcs = 'hg'
+src = '{DTE_HG}/terminfosrc'
+dst = '{DATA_HOME}/{name}'
+
+[package.terminal-icons]
+vcs = 'hg'
+src = '{DTE_HG}/terminal-icons'
+dst = '{DATA_HOME}/icons/{name}'
+
+[package.xkb]
+# Needs manual installation as root.
+load = 'install'
+install = 'cd xkb && sudo ./install/INSTALL'
+src = 'https://codeberg.org/datatravelandexperiments/kps-keyboard-layouts.git'
+dst = '{DATA_HOME}/{name}'

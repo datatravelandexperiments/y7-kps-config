@@ -1,0 +1,219 @@
+[global]
+DTE = 'ssh://kevin@datatravelandexperiments.com:1122/doc/hg/vim'
+
+[package.kps-terminal]
+load = true
+packadd = 'packadd'
+vcs = 'hg'
+src = '{DTE}/kps-terminal'
+
+[package.vim-characterize]
+load = true
+vcs = 'git'
+src = 'https://github.com/tpope/vim-characterize.git'
+
+[package.kps-fugitive-config]
+load = true
+vcs = 'hg'
+src = '{DTE}/kps-fugitive-config'
+before = 'vim-fugitive'
+
+[package.vim-fugitive]
+load = true
+vcs = 'git'
+src = 'https://github.com/tpope/vim-fugitive.git'
+
+[package.kps-gitgutter-config]
+load = true
+vcs = 'hg'
+src = '{DTE}/kps-gitgutter-config'
+before = 'vim-gitgutter'
+
+[package.vim-gitgutter]
+load = true
+vcs = 'git'
+src = 'https://github.com/airblade/vim-gitgutter.git'
+
+[package.vim-lawrencium]
+load = true
+vcs = 'git'
+src = 'https://github.com/ludovicchabant/vim-lawrencium.git'
+
+[package.vim-jsonnet]
+load = true
+vcs = 'git'
+src = 'https://github.com/google/vim-jsonnet.git'
+
+[package.vim-openscad]
+load = true
+vcs = 'git'
+src = 'https://github.com/sirtaj/vim-openscad.git'
+
+[package.vim-pandoc-syntax]
+load = true
+vcs = 'git'
+src = 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
+
+[package.lh-vim-lib]
+load = true
+vcs = 'git'
+src = 'https://github.com/LucHermitte/lh-vim-lib.git'
+
+[package.kps-alternate-config]
+load = true
+vcs = 'hg'
+src = '{DTE}/kps-alternate-config'
+
+[package.alternate-lite]
+load = true
+vcs = 'git'
+src = 'https://github.com/LucHermitte/alternate-lite.git'
+
+[package.kps-paste]
+load = 'vim'
+vcs = 'hg'
+src = '{DTE}/kps-paste'
+
+[package.kps-tags3]
+load = true
+vcs = 'hg'
+src = '{DTE}/kps-tags3'
+
+[package.kps-colorcolumn]
+load = true
+vcs = 'hg'
+src = '{DTE}/kps-colorcolumn'
+
+[package.kps-ale-config]
+load = 'vim'
+vcs = 'hg'
+src = '{DTE}/kps-ale-config'
+
+[package.ale]
+load = 'vim'
+vcs = 'git'
+src = 'https://github.com/dense-analysis/ale.git'
+
+[package.rust-vim]
+load = true
+vcs = 'git'
+src = 'https://github.com/rust-lang/rust.vim.git'
+
+[package.zig-vim]
+load = true
+vcs = 'git'
+src = 'https://github.com/ziglang/zig.vim.git'
+ 
+[package.editorconfig-vim]
+load = 'vim'
+vcs = 'git'
+src = 'https://github.com/editorconfig/editorconfig-vim.git'
+
+[package.nvim-lspconfig]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/neovim/nvim-lspconfig.git'
+
+[package.nvim-code-action-menu]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/weilbith/nvim-code-action-menu.git'
+
+[package.kps-nvim-lsp-config]
+load = 'neo'
+vcs = 'hg'
+src = '{DTE}/kps-nvim-lsp-config'
+
+[package.kps-rust-tools-config]
+load = 'neo'
+vcs = 'hg'
+src = '{DTE}/kps-rust-tools-config'
+
+[package.rust-tools]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/simrat39/rust-tools.nvim.git'
+
+[package.null-ls]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/jose-elias-alvarez/null-ls.nvim.git'
+
+[package.plenary-nvim]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/nvim-lua/plenary.nvim.git'
+
+[package.wrapping]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/andrewferrier/wrapping.nvim'
+
+
+[package.vim-HiLinkTrace]
+vcs = 'git'
+src = 'https://github.com/gerw/vim-HiLinkTrace.git'
+
+[package.file-line]
+vcs = 'git'
+src = 'https://github.com/bogado/file-line.git'
+
+[package.julia-vim]
+vcs = 'git'
+src = 'https://github.com/JuliaEditorSupport/julia-vim.git'
+
+[package.kps-cscope-config]
+vcs = 'hg'
+src = '{DTE}/kps-cscope-config'
+
+[package.kps-log-xxx]
+vcs = 'hg'
+src = '{DTE}/kps-log-xxx'
+
+[package.kps-lsp-clangd]
+vcs = 'hg'
+src = '{DTE}/kps-lsp-clangd'
+
+[package.kps-lsp-maps]
+vcs = 'hg'
+src = '{DTE}/kps-lsp-maps'
+
+[package.kps-show-hi]
+vcs = 'hg'
+src = '{DTE}/kps-show-hi'
+
+[package.kps-themes]
+vcs = 'hg'
+src = '{DTE}/kps-themes'
+
+[package.kps-ycm-config]
+vcs = 'hg'
+src = '{DTE}/kps-ycm-config'
+
+[package.literate-vim]
+vcs = 'git'
+src = 'https://github.com/zyedidia/literate.vim.git'
+
+[package.vim-async]
+vcs = 'git'
+src = 'https://github.com/prabirshrestha/async.vim.git'
+
+[package.vim-fswitch]
+vcs = 'git'
+src = 'https://github.com/derekwyatt/vim-fswitch.git'
+
+[package.vim-lsc]
+vcs = 'git'
+src = 'https://github.com/natebosch/vim-lsc.git'
+
+[package.vim-lsp]
+vcs = 'git'
+src = 'https://github.com/prabirshrestha/vim-lsp.git'
+
+[package.vim-signify]
+vcs = 'git'
+src = 'https://github.com/mhinz/vim-signify.git'
+
+[package.YouCompleteMe]
+vcs = 'git'
+src = 'https://github.com/ycm-core/YouCompleteMe.git'

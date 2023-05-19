@@ -1,0 +1,43 @@
+#!/usr/bin/env ksh
+
+function mkppm
+{
+  typeset -i i=0
+  typeset line a b c
+  while read line
+  do
+    a=
+    for c in $line
+    do
+      [[ -f $c.ppm ]] || ppmmake "$c" 1 1 >$c.ppm
+      a+=" $c.ppm"
+    done
+    pnmcat -lr $a >$i.ppm
+    b+=" $i.ppm"
+    ((++i))
+  done
+  pnmcat -tb $b
+}
+
+function mkpng
+{
+  mkppm | pnmtopng >$1.png
+}
+
+mkpng bg_body <<END
+gray95 gray95 gray95 gray95
+END
+
+mkpng slider_body <<END
+gray80 gray80 gray80 gray80 gray80
+END
+
+cp bg_body.png bg_bottom.png
+cp bg_body.png bg_top.png
+cp bg_body.png button_down.png
+cp bg_body.png button_down_pressed.png
+cp bg_body.png button_up.png
+cp bg_body.png button_up_pressed.png
+cp slider_body.png slider_top.png
+cp slider_body.png slider_knob.png
+cp slider_body.png slider_bottom.png

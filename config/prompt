@@ -1,0 +1,7 @@
+if [[ -n "$DTACH_SOCKET" ]]
+then
+    y7promptnote ${DTACH_SOCKET##*/}
+elif [[ -n "$SSH_TTY" ]]
+then
+    y7promptnote ${Y7HOST%%.*}
+fi

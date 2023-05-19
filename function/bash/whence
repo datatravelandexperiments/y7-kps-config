@@ -1,0 +1,15 @@
+function whence
+{
+    local i
+    for i
+    do
+        if [[ $(type -t "$i") == file ]]
+        then
+            type -p "$i"
+        else
+            type "$i"
+        fi
+    done
+}
+
+# vim:set filetype=sh et sts=4 sw=4 ai noci nosi:

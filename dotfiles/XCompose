@@ -1,0 +1,417 @@
+# Import default rules from the system Compose file
+include "%L"
+
+# Custom definitions
+
+<Multi_key> <l> <n> <n>                 : "¬"   U00AC # NOT SIGN
+<Multi_key> <l> <exclam>                : "¬"   U00AC # NOT SIGN
+<Multi_key> <asterisk> <asterisk>       : "×"   U00D7 # MULTIPLICATION SIGN
+<dead_greek> <U>                        : "Θ"   U0398 # GREEK CAPITAL LETTER THETA
+<dead_greek> <J>                        : "Ξ"   U039E # GREEK CAPITAL LETTER XI
+<dead_greek> <Y>                        : "Υ"   U03A5 # GREEK CAPITAL LETTER UPSILON
+<dead_greek> <X>                        : "Χ"   U03A7 # GREEK CAPITAL LETTER CHI
+<dead_greek> <C>                        : "Ψ"   U03A8 # GREEK CAPITAL LETTER PSI
+<dead_greek> <V>                        : "Ω"   U03A9 # GREEK CAPITAL LETTER OMEGA
+<dead_greek> <u>                        : "θ"   U03B8 # GREEK SMALL LETTER THETA
+<dead_greek> <j>                        : "ξ"   U03BE # GREEK SMALL LETTER XI
+<Multi_key> <p> <i>                     : "π"   U03C0 # GREEK SMALL LETTER PI
+<dead_greek> <w>                        : "ς"   U03C2 # GREEK SMALL LETTER FINAL SIGMA
+<dead_greek> <y>                        : "υ"   U03C5 # GREEK SMALL LETTER UPSILON
+<dead_greek> <x>                        : "χ"   U03C7 # GREEK SMALL LETTER CHI
+<dead_greek> <c>                        : "ψ"   U03C8 # GREEK SMALL LETTER PSI
+<dead_greek> <v>                        : "ω"   U03C9 # GREEK SMALL LETTER OMEGA
+<dead_greek> <W>                        : "ϕ"   U03D5 # GREEK PHI SYMBOL
+<dead_greek> <Q>                        : "Ϙ"   U03D8 # GREEK LETTER ARCHAIC KOPPA
+<dead_greek> <q>                        : "ϙ"   U03D9 # GREEK SMALL LETTER ARCHAIC KOPPA
+<dead_greek> <semicolon>                : "ϒ"   U03D2 # GREEK UPSILON WITH HOOK SYMBOL
+<dead_greek> <apostrophe>               : "φᶜ"
+
+<Multi_key> <C> <C>			: "ℂ"	U2102 # DOUBLE-STRUCK CAPITAL C
+<Multi_key> <N> <N>			: "ℕ"	U2115 # DOUBLE-STRUCK CAPITAL N
+<Multi_key> <P> <P>                     : "ℙ"   U2119 # DOUBLE-STRUCK CAPITAL P
+<Multi_key> <Q> <Q>			: "ℚ"	U211A # DOUBLE-STRUCK CAPITAL Q
+<Multi_key> <R> <R>			: "ℝ"	U211D # DOUBLE-STRUCK CAPITAL R
+<Multi_key> <R> <2>			: "ℝ²"
+<Multi_key> <Z> <Z>			: "ℤ"	U2124 # DOUBLE-STRUCK CAPITAL Z
+<Multi_key> <e> <e>                     : "ℯ"   U212F # SCRIPT SMALL E
+<Multi_key> <i> <i>                     : "ⅈ"   U2148 # DOUBLE-STRUCK ITALIC SMALL I
+<Multi_key> <less> <colon>              : "↤"   U21A4 # LEFTWARDS ARROW FROM BAR
+<Multi_key> <r> <U21A6>                 : "↤"   U21A4 # LEFTWARDS ARROW FROM BAR
+<Multi_key> <colon> <greater>           : "↦"   U21A6 # RIGHTWARDS ARROW FROM BAR
+<Multi_key> <r> <U21D2>                 : "⇐"   U21D0 # LEFTWARDS DOUBLE ARROW
+<Multi_key> <less> <U21D2>              : "⇔"   U21D4 # LEFT RIGHT DOUBLE ARROW
+<Multi_key> <U21D0> <greater>           : "⇔"   U21D4 # LEFT RIGHT DOUBLE ARROW
+<Multi_key> <U21D0> <U21D2>             : "⇔"   U21D4 # LEFT RIGHT DOUBLE ARROW
+
+<Multi_key> <A> <A>                     : "∀"   U2200 # FOR ALL
+<Multi_key> <E> <E>                     : "∃"   U2203 # THERE EXISTS
+<Multi_key> <slash> <U2203>             : "∄"   U2204 # THERE DOES NOT EXIST
+<Multi_key> <slash> <E> <E>             : "∄"   U2204 # THERE DOES NOT EXIST
+<Multi_key> <slash> <0>                 : "∅"   U2205 # EMPTY SET
+<Multi_key> <z> <0>                     : "∅"   U2205 # EMPTY SET
+<Multi_key> <z> <o>                     : "∅"   U2205 # EMPTY SET
+<Multi_key> <i> <n>                     : "∈"   U2208 # ELEMENT OF
+<Multi_key> <z> <b>                     : "∈"   U2208 # ELEMENT OF
+<Multi_key> <z> <e>                     : "∈"   U2208 # ELEMENT OF
+<Multi_key> <n> <i>                     : "∉"   U2209 # NOT AN ELEMENT OF
+<Multi_key> <slash> <i> <n>             : "∉"   U2209 # NOT AN ELEMENT OF
+<Multi_key> <slash> <z> <b>             : "∉"   U2209 # NOT AN ELEMENT OF
+<Multi_key> <slash> <z> <e>             : "∉"   U2209 # NOT AN ELEMENT OF
+<Multi_key> <z> <slash> <b>             : "∉"   U2209 # NOT AN ELEMENT OF
+<Multi_key> <z> <slash> <e>             : "∉"   U2209 # NOT AN ELEMENT OF
+<Multi_key> <r> <U2208>                 : "∋"   U220B # CONTAINS AS MEMBER
+<Multi_key> <r> <i> <n>                 : "∋"   U220B # CONTAINS AS MEMBER
+<Multi_key> <z> <c>                     : "∋"   U220B # CONTAINS AS MEMBER
+<Multi_key> <r> <n> <i>                 : "∌"   U220C # DOES NOT CONTAIN AS MEMBER
+<Multi_key> <slash> <U220B>             : "∌"   U220C # DOES NOT CONTAIN AS MEMBER
+<Multi_key> <slash> <r> <U2208>         : "∌"   U220C # DOES NOT CONTAIN AS MEMBER
+<Multi_key> <r> <slash> <U2208>         : "∌"   U220C # DOES NOT CONTAIN AS MEMBER
+<Multi_key> <z> <slash> <c>             : "∌"   U220C # DOES NOT CONTAIN AS MEMBER
+<Multi_key> <slash> <z> <c>             : "∌"   U220C # DOES NOT CONTAIN AS MEMBER
+<Multi_key> <minus> <plus>              : "∓"   U2213 # MINUS-OR-PLUS SIGN
+<Multi_key> <parenleft> <parenright>    : "∘"   U2218 # RING OPERATOR
+<Multi_key> <2> <v>                     : "√"   U221A # SQUARE ROOT
+<Multi_key> <3> <U221A>                 : "∛"   U221B # CUBE ROOT
+<Multi_key> <3> <v>                     : "∛"   U221B # CUBE ROOT
+<Multi_key> <4> <U221A>                 : "∜"   U221C # FOURTH ROOT
+<Multi_key> <4> <v>                     : "∜"   U221C # FOURTH ROOT
+<Multi_key> <l> <a>                     : "∧"   U2227 # LOGICAL AND
+<Multi_key> <slash> <backslash>         : "∧"   U2227 # LOGICAL AND
+<Multi_key> <backslash> <slash>         : "∨"   U2227 # LOGICAL AND
+<Multi_key> <l> <o>                     : "∨"   U2228 # LOGICAL OR
+<Multi_key> <v> <v>                     : "∨"   U2228 # LOGICAL OR
+<Multi_key> <z> <i>                     : "∩"   U2229 # INTERSECTION
+<Multi_key> <z> <u>                     : "∪"   U222A # UNION
+<Multi_key> <colon> <colon>             : "∷"   U2237 # PROPORTION
+<Multi_key> <grave> <grave>             : "≈"   U2248 # ALMOST EQUAL TO
+<Multi_key> <tilde> <tilde>             : "≈"   U2248 # ALMOST EQUAL TO
+<Multi_key> <slash> <grave>             : "≉"   U2249 # NOT ALMOST EQUAL TO
+<Multi_key> <slash> <tilde>             : "≉"   U2249 # NOT ALMOST EQUAL TO
+<Multi_key> <colon> <equal>             : "≔"   U2254 # COLON EQUALS
+<Multi_key> <d> <equal>                 : "≝"   U225D # EQUAL TO BY DEFINITION
+<Multi_key> <equal> <d>                 : "≝"   U225D # EQUAL TO BY DEFINITION
+<Multi_key> <m> <equal>                 : "≞"   U225E # MEASURED BY
+<Multi_key> <equal> <m>                 : "≞"   U225E # MEASURED BY
+<Multi_key> <equal> <question>          : "≟"   U225F # QUESTIONED EQUAL TO
+<Multi_key> <question> <equal>          : "≟"   U225F # QUESTIONED EQUAL TO
+<Multi_key> <exclam> <equal>            : "≠"   U2260 # NOT EQUAL TO
+<Multi_key> <equal> <equal> <equal>     : "≡"   U2261 # IDENTICAL TO
+<Multi_key> <equal> <equal> <slash>     : "≢"   U2262 # NOT IDENTICAL TO
+<Multi_key> <equal> <slash> <equal>     : "≢"   U2262 # NOT IDENTICAL TO
+<Multi_key> <z> <p>                     : "⊂"   U2282 # SUBSET OF
+<Multi_key> <r> <U2282>                 : "⊃"   U2283 # SUPERSET OF
+<Multi_key> <z> <r> <p>                 : "⊃"   U2283 # SUPERSET OF
+<Multi_key> <r> <z> <p>                 : "⊃"   U2283 # SUPERSET OF
+<Multi_key> <slash> <U2282>             : "⊄"   U2284 # NOT A SUBSET OF
+<Multi_key> <slash> <z> <p>             : "⊄"   U2284 # NOT A SUBSET OF
+<Multi_key> <z> <slash> <p>             : "⊄"   U2284 # NOT A SUBSET OF
+<Multi_key> <r> <U2284>                 : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <r> <slash> <U2282>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <slash> <r> <U2282>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <r> <slash> <z> <p>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <r> <z> <slash> <p>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <slash> <r> <z> <p>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <z> <r> <slash> <p>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <z> <slash> <r> <p>         : "⊅"   U2285 # NOT A SUPERSET OF
+<Multi_key> <z> <s>                     : "⊆"   U2286 # SUBSET OF OR EQUAL TO
+<Multi_key> <r> <U2286>                 : "⊇"   U2287 # SUPERSET OF OR EQUAL TO
+<Multi_key> <z> <r> <s>                 : "⊇"   U2287 # SUPERSET OF OR EQUAL TO
+<Multi_key> <r> <z> <s>                 : "⊇"   U2287 # SUPERSET OF OR EQUAL TO
+<Multi_key> <slash> <U2286>             : "⊈"   U2288 # NEITHER A SUBSET OF NOR EQUAL TO
+<Multi_key> <slash> <z> <s>             : "⊈"   U2288 # NEITHER A SUBSET OF NOR EQUAL TO
+<Multi_key> <z> <slash> <s>             : "⊈"   U2288 # NEITHER A SUBSET OF NOR EQUAL TO
+<Multi_key> <r> <U2288>                 : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <r> <slash> <U2286>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <slash> <r> <U2286>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <r> <slash> <z> <s>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <r> <z> <slash> <s>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <slash> <r> <z> <s>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <z> <r> <slash> <s>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <z> <slash> <r> <s>         : "⊉"   U2289 # NEITHER A SUPERSET OF NOR EQUAL TO
+<Multi_key> <parenleft> <plus> <parenright>     : "⊕"   U2295 # CIRCLED PLUS
+<Multi_key> <parenleft> <U2212> <parenright>    : "⊖"   U2296 # CIRCLED MINUS
+<Multi_key> <parenleft> <minus> <parenright>    : "⊖"   U2296 # CIRCLED MINUS
+<Multi_key> <parenleft> <U00D7> <parenright>    : "⊗"   U2297 # CIRCLED TIMES
+<Multi_key> <parenleft> <x> <parenright>        : "⊗"   U2297 # CIRCLED TIMES
+<Multi_key> <parenleft> <slash> <parenright>    : "⊘"   U2298 # CIRCLED DIVISION SLASH
+<Multi_key> <parenleft> <U00B7> <parenright>    : "⊙"   U2299 # CIRCLED DOT OPERATOR
+<Multi_key> <parenleft> <period> <parenright>   : "⊙"   U2299 # CIRCLED DOT OPERATOR
+<Multi_key> <parenleft> <U2218> <parenright>    : "⊚"   U229A # CIRCLED RING OPERATOR
+<Multi_key> <parenleft> <asterisk> <parenright> : "⊛"   U229B # CIRCLED ASTERISK OPERATOR
+<Multi_key> <parenleft> <equal> <parenright>    : "⊜"   U229C # CIRCLED EQUALS
+<Multi_key> <parenleft> <U2010> <parenright>    : "⊝"   U229D # CIRCLED DASH
+<Multi_key> <parenleft> <U2013> <parenright>    : "⊝"   U229D # CIRCLED DASH
+<Multi_key> <l> <P>                     : "⊢"   U22A2 # RIGHT TACK
+<Multi_key> <r> <U22A2>                 : "⊣"   U22A3 # LEFT TACK
+<Multi_key> <r> <l> <P>                 : "⊣"   U22A3 # LEFT TACK
+<Multi_key> <l> <r> <P>                 : "⊣"   U22A3 # LEFT TACK
+<Multi_key> <l> <T>                     : "⊤"   U22A4 # DOWN TACK
+<Multi_key> <l> <B>                     : "⊥"   U22A5 # UP TACK
+<Multi_key> <l> <A>                     : "⊦"   U22A6 # ASSERTION
+<Multi_key> <l> <M>                     : "⊧"   U22A7 # MODELS
+<Multi_key> <l> <V>                     : "⊨"   U22A8 # TRUE
+<Multi_key> <l> <F>                     : "⊩"   U22A9 # FORCES
+<Multi_key> <slash> <U22A2>             : "⊬"   U22AC # DOES NOT PROVE
+<Multi_key> <slash> <l> <P>             : "⊬"   U22AC # DOES NOT PROVE
+<Multi_key> <l> <slash> <P>             : "⊬"   U22AC # DOES NOT PROVE
+<Multi_key> <slash> <U22A8>             : "⊭"   U22AD # NOT TRUE
+<Multi_key> <slash> <l> <V>             : "⊭"   U22AD # NOT TRUE
+<Multi_key> <l> <slash> <V>             : "⊭"   U22AD # NOT TRUE
+<Multi_key> <slash> <U22A9>             : "⊮"   U22AE # DOES NOT FORCE
+<Multi_key> <slash> <l> <F>             : "⊮"   U22AE # DOES NOT FORCE
+<Multi_key> <l> <slash> <F>             : "⊮"   U22AE # DOES NOT FORCE
+<Multi_key> <U2228> <underscore>        : "⊻"   U22BB # XOR
+<Multi_key> <l> <x>                     : "⊻"   U22BB # XOR
+<Multi_key> <underscore> <U2228>        : "⊻"   U22BB # XOR
+<Multi_key> <underscore> <backslash> <slash>  : "⊻"   U22BB # XOR
+<Multi_key> <underscore> <v>            : "⊻"   U22BB # XOR
+<Multi_key> <v> <underscore>            : "⊻"   U22BB # XOR
+<Multi_key> <l> <n> <a>                 : "⊼"   U22BC # NAND
+<Multi_key> <l> <n> <o>                 : "⊽"   U22BD # NOR
+
+<Multi_key> <bracketleft> <question>    : "☐"   U2610 # BALLOT BOX
+<Multi_key> <bracketleft> <space>       : "☐"   U2610 # BALLOT BOX
+<Multi_key> <bracketleft> <v>           : "☑"   U2611 # BALLOT BOX WITH CHECK
+<Multi_key> <bracketleft> <y>           : "☑"   U2611 # BALLOT BOX WITH CHECK
+<Multi_key> <bracketleft> <n>           : "☒"   U2612 # BALLOT BOX WITH X
+<Multi_key> <bracketleft> <x>           : "☒"   U2612 # BALLOT BOX WITH X
+
+<Multi_key> <bracketleft> <bracketleft> : "「"  U300C # LEFT CORNER BRACKET
+<Multi_key> <bracketright> <bracketright> : "」" U300D # RIGHT CORNER BRACKET
+
+<Multi_key> <s> <0>                     : "⁰"   U2070 # SUPERSCRIPT ZERO
+<Multi_key> <s> <1>                     : "¹"   U00B9 # SUPERSCRIPT ONE
+<Multi_key> <s> <2>                     : "²"   U00B2 # SUPERSCRIPT TWO
+<Multi_key> <s> <3>                     : "³"   U00B3 # SUPERSCRIPT THREE
+<Multi_key> <s> <4>                     : "⁴"   U2074 # SUPERSCRIPT FOUR
+<Multi_key> <s> <5>                     : "⁵"   U2075 # SUPERSCRIPT FIVE
+<Multi_key> <s> <6>                     : "⁶"   U2076 # SUPERSCRIPT SIX
+<Multi_key> <s> <7>                     : "⁷"   U2077 # SUPERSCRIPT SEVEN
+<Multi_key> <s> <8>                     : "⁸"   U2078 # SUPERSCRIPT EIGHT
+<Multi_key> <s> <9>                     : "⁹"   U2079 # SUPERSCRIPT NINE
+<Multi_key> <s> <A>                     : "ᴬ"   U1D2C # MODIFIER LETTER CAPITAL A
+<Multi_key> <s> <a>                     : "ᵃ"   U1D43 # MODIFIER LETTER SMALL A
+<Multi_key> <s> <B>                     : "ᴮ"   U1D2E # MODIFIER LETTER CAPITAL B
+<Multi_key> <s> <b>                     : "ᵇ"   U1D47 # MODIFIER LETTER SMALL B
+<Multi_key> <s> <c>                     : "ᶜ"   U1D9C # MODIFIER LETTER SMALL C
+<Multi_key> <s> <D>                     : "ᴰ"   U1D30 # MODIFIER LETTER CAPITAL D
+<Multi_key> <s> <d>                     : "ᵈ"   U1D48 # MODIFIER LETTER SMALL D
+<Multi_key> <s> <E>                     : "ᴱ"   U1D31 # MODIFIER LETTER CAPITAL E
+<Multi_key> <s> <e>                     : "ᵉ"   U1D49 # MODIFIER LETTER SMALL E
+<Multi_key> <s> <equal>                 : "⁼"   U207C # SUPERSCRIPT EQUALS SIGN
+<Multi_key> <s> <f>                     : "ᶠ"   U1DA0 # MODIFIER LETTER SMALL F
+<Multi_key> <s> <G>                     : "ᴳ"   U1D33 # MODIFIER LETTER CAPITAL G
+<Multi_key> <s> <g>                     : "ᵍ"   U1D4D # MODIFIER LETTER SMALL G
+<Multi_key> <s> <h>                     : "ʰ"   U02B0 # MODIFIER LETTER SMALL H
+<Multi_key> <s> <H>                     : "ᴴ"   U1D34 # MODIFIER LETTER CAPITAL H
+<Multi_key> <s> <I>                     : "ᴵ"   U1D35 # MODIFIER LETTER CAPITAL I
+<Multi_key> <s> <i>                     : "ⁱ"   U2071 # SUPERSCRIPT LATIN SMALL LETTER I
+<Multi_key> <s> <i>                     : "ⁱ"   U2071 # SUPERSCRIPT LATIN SMALL LETTER I
+<Multi_key> <s> <j>                     : "ʲ"   U02B2 # MODIFIER LETTER SMALL J
+<Multi_key> <s> <J>                     : "ᴶ"   U1D36 # MODIFIER LETTER CAPITAL J
+<Multi_key> <s> <K>                     : "ᴷ"   U1D37 # MODIFIER LETTER CAPITAL K
+<Multi_key> <s> <k>                     : "ᵏ"   U1D4F # MODIFIER LETTER SMALL K
+<Multi_key> <s> <l>                     : "ˡ"   U02E1 # MODIFIER LETTER SMALL L
+<Multi_key> <s> <L>                     : "ᴸ"   U1D38 # MODIFIER LETTER CAPITAL L
+<Multi_key> <s> <minus>                 : "⁻"   U207B # SUPERSCRIPT MINUS
+<Multi_key> <s> <M>                     : "ᴹ"   U1D39 # MODIFIER LETTER CAPITAL M
+<Multi_key> <s> <m>                     : "ᵐ"   U1D50 # MODIFIER LETTER SMALL M
+<Multi_key> <s> <N>                     : "ᴺ"   U1D3A # MODIFIER LETTER CAPITAL N
+<Multi_key> <s> <n>                     : "ⁿ"   U207F # SUPERSCRIPT LATIN SMALL LETTER N
+<Multi_key> <s> <O>                     : "ᴼ"   U1D3C # MODIFIER LETTER CAPITAL O
+<Multi_key> <s> <o>                     : "ᵒ"   U1D52 # MODIFIER LETTER SMALL O
+<Multi_key> <s> <parenleft>             : "⁽"   U207D # SUPERSCRIPT LEFT PARENTHESIS
+<Multi_key> <s> <parenright>            : "⁾"   U207E # SUPERSCRIPT RIGHT PARENTHESIS
+<Multi_key> <s> <plus>                  : "⁺"   U207A # SUPERSCRIPT PLUS SIGN
+<Multi_key> <s> <P>                     : "ᴾ"   U1D3E # MODIFIER LETTER CAPITAL P
+<Multi_key> <s> <p>                     : "ᵖ"   U1D56 # MODIFIER LETTER SMALL P
+<Multi_key> <s> <r>                     : "ʳ"   U02B3 # MODIFIER LETTER SMALL R
+<Multi_key> <s> <R>                     : "ᴿ"   U1D3F # MODIFIER LETTER CAPITAL R
+<Multi_key> <s> <s>                     : "ˢ"   U02E2 # MODIFIER LETTER SMALL S
+<Multi_key> <s> <T>                     : "ᵀ"   U1D40 # MODIFIER LETTER CAPITAL T
+<Multi_key> <s> <t>                     : "ᵗ"   U1D57 # MODIFIER LETTER SMALL T
+<Multi_key> <s> <U>                     : "ᵁ"   U1D41 # MODIFIER LETTER CAPITAL U
+<Multi_key> <s> <u>                     : "ᵘ"   U1D58 # MODIFIER LETTER SMALL U
+<Multi_key> <s> <v>                     : "ᵛ"   U1D5B # MODIFIER LETTER SMALL V
+<Multi_key> <s> <V>                     : "ⱽ"   U2C7D # MODIFIER LETTER CAPITAL V
+<Multi_key> <s> <w>                     : "ʷ"   U02B7 # MODIFIER LETTER SMALL W
+<Multi_key> <s> <W>                     : "ᵂ"   U1D42 # MODIFIER LETTER CAPITAL W
+<Multi_key> <s> <x>                     : "ˣ"   U02E3 # MODIFIER LETTER SMALL X
+<Multi_key> <s> <y>                     : "ʸ"   U02B8 # MODIFIER LETTER SMALL Y
+<Multi_key> <s> <z>                     : "ᶻ"   U1DBB # MODIFIER LETTER SMALL Z
+<Multi_key> <x> <0>                     : "₀"   U2080 # SUBSCRIPT ZERO
+<Multi_key> <x> <1>                     : "₁"   U2081 # SUBSCRIPT ONE
+<Multi_key> <x> <2>                     : "₂"   U2082 # SUBSCRIPT TWO
+<Multi_key> <x> <3>                     : "₃"   U2083 # SUBSCRIPT THREE
+<Multi_key> <x> <4>                     : "₄"   U2084 # SUBSCRIPT FOUR
+<Multi_key> <x> <5>                     : "₅"   U2085 # SUBSCRIPT FIVE
+<Multi_key> <x> <6>                     : "₆"   U2086 # SUBSCRIPT SIX
+<Multi_key> <x> <7>                     : "₇"   U2087 # SUBSCRIPT SEVEN
+<Multi_key> <x> <8>                     : "₈"   U2088 # SUBSCRIPT EIGHT
+<Multi_key> <x> <9>                     : "₉"   U2089 # SUBSCRIPT NINE
+<Multi_key> <x> <a>                     : "ₐ"   U2090 # LATIN SUBSCRIPT SMALL LETTER A
+<Multi_key> <x> <e>                     : "ₑ"   U2091 # LATIN SUBSCRIPT SMALL LETTER E
+<Multi_key> <x> <equal>                 : "₌"   U208C # SUBSCRIPT EQUALS SIGN
+<Multi_key> <x> <h>                     : "ₕ"   U2095 # LATIN SUBSCRIPT SMALL LETTER H
+<Multi_key> <x> <i>                     : "ᵢ"   U1D62 # LATIN SUBSCRIPT SMALL LETTER I
+<Multi_key> <x> <j>                     : "ⱼ"   U2C7C # LATIN SUBSCRIPT SMALL LETTER J
+<Multi_key> <x> <k>                     : "ₖ"   U2096 # LATIN SUBSCRIPT SMALL LETTER K
+<Multi_key> <x> <l>                     : "ₗ"   U2097 # LATIN SUBSCRIPT SMALL LETTER L
+<Multi_key> <x> <minus>                 : "₋"   U208B # SUBSCRIPT MINUS
+<Multi_key> <x> <m>                     : "ₘ"   U2098 # LATIN SUBSCRIPT SMALL LETTER M
+<Multi_key> <x> <n>                     : "ₙ"   U2099 # LATIN SUBSCRIPT SMALL LETTER N
+<Multi_key> <x> <o>                     : "ₒ"   U2092 # LATIN SUBSCRIPT SMALL LETTER O
+<Multi_key> <x> <parenleft>             : "₍"   U208D # SUBSCRIPT LEFT PARENTHESIS
+<Multi_key> <x> <parenright>            : "₎"   U208E # SUBSCRIPT RIGHT PARENTHESIS
+<Multi_key> <x> <plus>                  : "₊"   U208A # SUBSCRIPT PLUS SIGN
+<Multi_key> <x> <p>                     : "ₚ"   U209A # LATIN SUBSCRIPT SMALL LETTER P
+<Multi_key> <x> <r>                     : "ᵣ"   U1D63 # LATIN SUBSCRIPT SMALL LETTER R
+<Multi_key> <x> <s>                     : "ₛ"   U209B # LATIN SUBSCRIPT SMALL LETTER S
+<Multi_key> <x> <t>                     : "ₜ"   U209C # LATIN SUBSCRIPT SMALL LETTER T
+<Multi_key> <x> <u>                     : "ᵤ"   U1D64 # LATIN SUBSCRIPT SMALL LETTER U
+<Multi_key> <x> <v>                     : "ᵥ"   U1D65 # LATIN SUBSCRIPT SMALL LETTER V
+<Multi_key> <x> <x>                     : "ₓ"   U2093 # LATIN SUBSCRIPT SMALL LETTER X
+
+<dead_A> <0>                            : "⁰"   U2070 # SUPERSCRIPT ZERO
+<dead_A> <1>                            : "¹"   U00B9 # SUPERSCRIPT ONE
+<dead_A> <2>                            : "²"   U00B2 # SUPERSCRIPT TWO
+<dead_A> <3>                            : "³"   U00B3 # SUPERSCRIPT THREE
+<dead_A> <4>                            : "⁴"   U2074 # SUPERSCRIPT FOUR
+<dead_A> <5>                            : "⁵"   U2075 # SUPERSCRIPT FIVE
+<dead_A> <6>                            : "⁶"   U2076 # SUPERSCRIPT SIX
+<dead_A> <7>                            : "⁷"   U2077 # SUPERSCRIPT SEVEN
+<dead_A> <8>                            : "⁸"   U2078 # SUPERSCRIPT EIGHT
+<dead_A> <9>                            : "⁹"   U2079 # SUPERSCRIPT NINE
+<dead_A> <A>                            : "ᴬ"   U1D2C # MODIFIER LETTER CAPITAL A
+<dead_A> <a>                            : "ᵃ"   U1D43 # MODIFIER LETTER SMALL A
+<dead_A> <B>                            : "ᴮ"   U1D2E # MODIFIER LETTER CAPITAL B
+<dead_A> <b>                            : "ᵇ"   U1D47 # MODIFIER LETTER SMALL B
+<dead_A> <c>                            : "ᶜ"   U1D9C # MODIFIER LETTER SMALL C
+<dead_A> <D>                            : "ᴰ"   U1D30 # MODIFIER LETTER CAPITAL D
+<dead_A> <d>                            : "ᵈ"   U1D48 # MODIFIER LETTER SMALL D
+<dead_A> <E>                            : "ᴱ"   U1D31 # MODIFIER LETTER CAPITAL E
+<dead_A> <e>                            : "ᵉ"   U1D49 # MODIFIER LETTER SMALL E
+<dead_A> <equal>                        : "⁼"   U207C # SUPERSCRIPT EQUALS SIGN
+<dead_A> <f>                            : "ᶠ"   U1DA0 # MODIFIER LETTER SMALL F
+<dead_A> <G>                            : "ᴳ"   U1D33 # MODIFIER LETTER CAPITAL G
+<dead_A> <g>                            : "ᵍ"   U1D4D # MODIFIER LETTER SMALL G
+<dead_A> <h>                            : "ʰ"   U02B0 # MODIFIER LETTER SMALL H
+<dead_A> <H>                            : "ᴴ"   U1D34 # MODIFIER LETTER CAPITAL H
+<dead_A> <I>                            : "ᴵ"   U1D35 # MODIFIER LETTER CAPITAL I
+<dead_A> <i>                            : "ⁱ"   U2071 # SUPERSCRIPT LATIN SMALL LETTER I
+<dead_A> <i>                            : "ⁱ"   U2071 # SUPERSCRIPT LATIN SMALL LETTER I
+<dead_A> <j>                            : "ʲ"   U02B2 # MODIFIER LETTER SMALL J
+<dead_A> <J>                            : "ᴶ"   U1D36 # MODIFIER LETTER CAPITAL J
+<dead_A> <K>                            : "ᴷ"   U1D37 # MODIFIER LETTER CAPITAL K
+<dead_A> <k>                            : "ᵏ"   U1D4F # MODIFIER LETTER SMALL K
+<dead_A> <l>                            : "ˡ"   U02E1 # MODIFIER LETTER SMALL L
+<dead_A> <L>                            : "ᴸ"   U1D38 # MODIFIER LETTER CAPITAL L
+<dead_A> <minus>                        : "⁻"   U207B # SUPERSCRIPT MINUS
+<dead_A> <M>                            : "ᴹ"   U1D39 # MODIFIER LETTER CAPITAL M
+<dead_A> <m>                            : "ᵐ"   U1D50 # MODIFIER LETTER SMALL M
+<dead_A> <N>                            : "ᴺ"   U1D3A # MODIFIER LETTER CAPITAL N
+<dead_A> <n>                            : "ⁿ"   U207F # SUPERSCRIPT LATIN SMALL LETTER N
+<dead_A> <O>                            : "ᴼ"   U1D3C # MODIFIER LETTER CAPITAL O
+<dead_A> <o>                            : "ᵒ"   U1D52 # MODIFIER LETTER SMALL O
+<dead_A> <parenleft>                    : "⁽"   U207D # SUPERSCRIPT LEFT PARENTHESIS
+<dead_A> <parenright>                   : "⁾"   U207E # SUPERSCRIPT RIGHT PARENTHESIS
+<dead_A> <plus>                         : "⁺"   U207A # SUPERSCRIPT PLUS SIGN
+<dead_A> <P>                            : "ᴾ"   U1D3E # MODIFIER LETTER CAPITAL P
+<dead_A> <p>                            : "ᵖ"   U1D56 # MODIFIER LETTER SMALL P
+<dead_A> <r>                            : "ʳ"   U02B3 # MODIFIER LETTER SMALL R
+<dead_A> <R>                            : "ᴿ"   U1D3F # MODIFIER LETTER CAPITAL R
+<dead_A> <s>                            : "ˢ"   U02E2 # MODIFIER LETTER SMALL S
+<dead_A> <T>                            : "ᵀ"   U1D40 # MODIFIER LETTER CAPITAL T
+<dead_A> <t>                            : "ᵗ"   U1D57 # MODIFIER LETTER SMALL T
+<dead_A> <U>                            : "ᵁ"   U1D41 # MODIFIER LETTER CAPITAL U
+<dead_A> <u>                            : "ᵘ"   U1D58 # MODIFIER LETTER SMALL U
+<dead_A> <v>                            : "ᵛ"   U1D5B # MODIFIER LETTER SMALL V
+<dead_A> <w>                            : "ʷ"   U02B7 # MODIFIER LETTER SMALL W
+<dead_A> <W>                            : "ᵂ"   U1D42 # MODIFIER LETTER CAPITAL W
+<dead_A> <x>                            : "ˣ"   U02E3 # MODIFIER LETTER SMALL X
+<dead_A> <y>                            : "ʸ"   U02B8 # MODIFIER LETTER SMALL Y
+<dead_A> <z>                            : "ᶻ"   U1DBB # MODIFIER LETTER SMALL Z
+<dead_U> <0>                            : "₀"   U2080 # SUBSCRIPT ZERO
+<dead_U> <1>                            : "₁"   U2081 # SUBSCRIPT ONE
+<dead_U> <2>                            : "₂"   U2082 # SUBSCRIPT TWO
+<dead_U> <3>                            : "₃"   U2083 # SUBSCRIPT THREE
+<dead_U> <4>                            : "₄"   U2084 # SUBSCRIPT FOUR
+<dead_U> <5>                            : "₅"   U2085 # SUBSCRIPT FIVE
+<dead_U> <6>                            : "₆"   U2086 # SUBSCRIPT SIX
+<dead_U> <7>                            : "₇"   U2087 # SUBSCRIPT SEVEN
+<dead_U> <8>                            : "₈"   U2088 # SUBSCRIPT EIGHT
+<dead_U> <9>                            : "₉"   U2089 # SUBSCRIPT NINE
+<dead_U> <a>                            : "ₐ"   U2090 # LATIN SUBSCRIPT SMALL LETTER A
+<dead_U> <e>                            : "ₑ"   U2091 # LATIN SUBSCRIPT SMALL LETTER E
+<dead_U> <equal>                        : "₌"   U208C # SUBSCRIPT EQUALS SIGN
+<dead_U> <h>                            : "ₕ"   U2095 # LATIN SUBSCRIPT SMALL LETTER H
+<dead_U> <i>                            : "ᵢ"   U1D62 # LATIN SUBSCRIPT SMALL LETTER I
+<dead_U> <k>                            : "ₖ"   U2096 # LATIN SUBSCRIPT SMALL LETTER K
+<dead_U> <l>                            : "ₗ"   U2097 # LATIN SUBSCRIPT SMALL LETTER L
+<dead_U> <minus>                        : "₋"   U208B # SUBSCRIPT MINUS
+<dead_U> <m>                            : "ₘ"   U2098 # LATIN SUBSCRIPT SMALL LETTER M
+<dead_U> <n>                            : "ₙ"   U2099 # LATIN SUBSCRIPT SMALL LETTER N
+<dead_U> <o>                            : "ₒ"   U2092 # LATIN SUBSCRIPT SMALL LETTER O
+<dead_U> <parenleft>                    : "₍"   U208D # SUBSCRIPT LEFT PARENTHESIS
+<dead_U> <parenright>                   : "₎"   U208E # SUBSCRIPT RIGHT PARENTHESIS
+<dead_U> <plus>                         : "₊"   U208A # SUBSCRIPT PLUS SIGN
+<dead_U> <p>                            : "ₚ"   U209A # LATIN SUBSCRIPT SMALL LETTER P
+<dead_U> <r>                            : "ᵣ"   U1D63 # LATIN SUBSCRIPT SMALL LETTER R
+<dead_U> <s>                            : "ₛ"   U209B # LATIN SUBSCRIPT SMALL LETTER S
+<dead_U> <t>                            : "ₜ"   U209C # LATIN SUBSCRIPT SMALL LETTER T
+<dead_U> <u>                            : "ᵤ"   U1D64 # LATIN SUBSCRIPT SMALL LETTER U
+<dead_U> <v>                            : "ᵥ"   U1D65 # LATIN SUBSCRIPT SMALL LETTER V
+<dead_U> <x>                            : "ₓ"   U2093 # LATIN SUBSCRIPT SMALL LETTER X
+
+<dead_E> <a>                            : "א"   U05D0 # HEBREW LETTER ALEF
+<dead_E> <b>                            : "ב"   U05D1 # HEBREW LETTER BET
+<dead_E> <d>                            : "ד"   U05D3 # HEBREW LETTER DALET
+<dead_E> <e>                            : "ע"   U05E2 # HEBREW LETTER AYIN
+<dead_E> <f>                            : "צ"   U05E6 # HEBREW LETTER TSADI
+<dead_E> <g>                            : "ג"   U05D2 # HEBREW LETTER GIMEL
+<dead_E> <h>                            : "ה"   U05D4 # HEBREW LETTER HE
+<dead_E> <j>                            : "ח"   U05D7 # HEBREW LETTER HET
+<dead_E> <k>                            : "כ"   U05DB # HEBREW LETTER KAF
+<dead_E> <l>                            : "ל"   U05DC # HEBREW LETTER LAMED
+<dead_E> <m>                            : "מ"   U05DE # HEBREW LETTER MEM
+<dead_E> <n>                            : "נ"   U05E0 # HEBREW LETTER NUN
+<dead_E> <p>                            : "פ"   U05E4 # HEBREW LETTER PE
+<dead_E> <q>                            : "ק"   U05E7 # HEBREW LETTER QOF
+<dead_E> <r>                            : "ר"   U05E8 # HEBREW LETTER RESH
+<dead_E> <s>                            : "ס"   U05E1 # HEBREW LETTER SAMEKH
+<dead_E> <t>                            : "ט"   U05D8 # HEBREW LETTER TET
+<dead_E> <u>                            : "ת"   U05EA # HEBREW LETTER TAV
+<dead_E> <v>                            : "ו"   U05D5 # HEBREW LETTER VAV
+<dead_E> <w>                            : "ש"   U05E9 # HEBREW LETTER SHIN
+<dead_E> <y>                            : "י"   U05D9 # HEBREW LETTER YOD
+<dead_E> <z>                            : "ז"   U05D6 # HEBREW LETTER ZAYIN
+
+<Multi_key> <U266F> <U266F>             : "𝄪"   U1D12A # MUSICAL SYMBOL DOUBLE SHARP
+<Multi_key> <U266D> <U266D>             : "𝄫"   U1D12B # MUSICAL SYMBOL DOUBLE FLAT
+<Multi_key> <plus>  <U266D>             : "𝄬"   U1D12C # MUSICAL SYMBOL FLAT UP
+<Multi_key> <U2191> <U266D>             : "𝄬"   U1D12C # MUSICAL SYMBOL FLAT UP
+<Multi_key> <U266D> <plus>              : "𝄬"   U1D12C # MUSICAL SYMBOL FLAT UP
+<Multi_key> <U266D> <U2191>             : "𝄬"   U1D12C # MUSICAL SYMBOL FLAT UP
+<Multi_key> <minus> <U266D>             : "𝄭"   U1D12D # MUSICAL SYMBOL FLAT DOWN
+<Multi_key> <U2193> <U266D>             : "𝄭"   U1D12D # MUSICAL SYMBOL FLAT DOWN
+<Multi_key> <U266D> <minus>             : "𝄭"   U1D12D # MUSICAL SYMBOL FLAT DOWN
+<Multi_key> <U266D> <U2193>             : "𝄭"   U1D12D # MUSICAL SYMBOL FLAT DOWN
+<Multi_key> <plus>  <U266E>             : "𝄮"   U1D12E # MUSICAL SYMBOL NATURAL UP
+<Multi_key> <U2191> <U266E>             : "𝄮"   U1D12E # MUSICAL SYMBOL NATURAL UP
+<Multi_key> <U266E> <plus>              : "𝄮"   U1D12E # MUSICAL SYMBOL NATURAL UP
+<Multi_key> <U266E> <U2191>             : "𝄮"   U1D12E # MUSICAL SYMBOL NATURAL UP
+<Multi_key> <minus> <U266E>             : "𝄯"   U1D12F # MUSICAL SYMBOL NATURAL DOWN
+<Multi_key> <U2193> <U266E>             : "𝄯"   U1D12F # MUSICAL SYMBOL NATURAL DOWN
+<Multi_key> <U266E> <minus>             : "𝄯"   U1D12F # MUSICAL SYMBOL NATURAL DOWN
+<Multi_key> <U266E> <U2193>             : "𝄯"   U1D12F # MUSICAL SYMBOL NATURAL DOWN
+<Multi_key> <plus>  <U266F>             : "𝄰"   U1D130 # MUSICAL SYMBOL SHARP UP
+<Multi_key> <U2191> <U266F>             : "𝄰"   U1D130 # MUSICAL SYMBOL SHARP UP
+<Multi_key> <U266F> <plus>              : "𝄰"   U1D130 # MUSICAL SYMBOL SHARP UP
+<Multi_key> <U266F> <U2191>             : "𝄰"   U1D130 # MUSICAL SYMBOL SHARP UP
+<Multi_key> <minus> <U266F>             : "𝄱"   U1D131 # MUSICAL SYMBOL SHARP DOWN
+<Multi_key> <U2193> <U266F>             : "𝄱"   U1D131 # MUSICAL SYMBOL SHARP DOWN
+<Multi_key> <U266F> <minus>             : "𝄱"   U1D131 # MUSICAL SYMBOL SHARP DOWN
+<Multi_key> <U266F> <U2193>             : "𝄱"   U1D131 # MUSICAL SYMBOL SHARP DOWN
+<Multi_key> <U266F> <4>                 : "𝄲"   U1D132 # MUSICAL SYMBOL QUARTER TONE SHARP
+<Multi_key> <U266D> <4>                 : "𝄳"   U1D133 # MUSICAL SYMBOL QUARTER TONE FLAT
+<Multi_key> <m> <o> <j> <o>             : "🔥"  U1F525 # FIRE

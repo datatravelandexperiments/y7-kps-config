@@ -1,0 +1,136 @@
+#!/usr/bin/env ksh93
+
+SELF="${0##*/}"
+
+typeset -C opt=(
+  usage="
+    [-1]
+    [+NAME?$SELF - Build y7 boostrap script for older targets]
+    [o:output?Output script]:[FILENAME]
+    [v:verbose?Show progress]
+    [10:y7src?y7 source repository prefix]:[URL]
+    [11:y7dst?y7 installation root]:[PATH]
+    [12:config?Target configuration directory]:[PATH]
+    [13:data?Target data directory]:[PATH]
+    [14:origin]:[PATH]
+
+    file ..."
+    _10='ssh://kevin@datatravelandexperiments.com:1122/~/doc/git/y7'
+    _11="${XDG_DATA_HOME:-$HOME/.local/share}/y7"
+    _12="${XDG_CONFIG_HOME:-$HOME/.config}"
+    _13="${XDG_DATA_HOME:-$HOME/.local/share}"
+    _14="${XDG_DATA_HOME:-$HOME/.local/share}/y7"
+)
+
+while getopts "${opt.usage}" opt._
+do
+  case "${opt._}" in
+  *)
+    typeset "opt._${opt._}"="${OPTARG:-1}"
+    ;;
+  esac
+done
+shift OPTIND-1
+
+tmp="${TMPDIR:-/tmp}/$SELF:$$"
+mkdir -p "$tmp"
+trap "rm -rf \"$tmp\"" 0
+trap exit 1 2 13 15
+
+if [[ -n ${opt.o} ]]
+then
+    >"${opt.o}"
+    exec 3>"${opt.o}"
+else
+    exec 3>&1
+fi
+
+function copy
+{
+    typeset end="${3:-END}"
+    printf '\ncat >"%s" <<%s\n' "$2" "$end"
+    cat "$1"
+    printf '%s\n' "$end"
+}
+
+function replacedirs
+{
+    sed \
+        -e "s,${opt._10},\${Y7_SRC}," \
+        -e "s,${opt._11},\${Y7_DST}," \
+        -e "s,${opt._12},\${XDG_CONFIG_HOME},"
+}
+
+
+# Construct y7 lists.
+
+gepare \
+    --bootstrap \
+    --define global.Y7SRC "${opt._10}" \
+    --define global.Y7DST "${opt._11}" \
+    --list-type=y7rc --define list.y7rc.file "$tmp/y7rc" \
+    --list-type=install --define list.install.file "$tmp/install" \
+    "${opt._14}/kps-config/packages.toml" |
+        replacedirs >"$tmp/y7bootstrap"
+
+cat >&3 <<END
+#!/bin/sh
+
+: \${XDG_CONFIG_HOME:='${opt._12}'}
+: \${XDG_DATA_HOME:='${opt._13}'}
+export XDG_CONFIG_HOME
+export XDG_DATA_HOME
+
+Y7_SRC='${opt._10}'
+Y7_DST='${opt._11}'
+
+set -ex
+mkdir -p "\$XDG_CONFIG_HOME/y7"
+mkdir -p "\$XDG_CONFIG_HOME/vim/pack/git/opt"
+mkdir -p "\$XDG_CONFIG_HOME/vim/pack/hg/opt"
+mkdir -p "\$XDG_DATA_HOME"
+mkdir -p "\$Y7_DST"
+
+if ! test -d "\$Y7_DST/kps-config"
+then
+    git clone "\$Y7_SRC/y7-kps-config.git" "\$Y7_DST/kps-config"
+fi
+
+END
+
+print -u3 '# y7'
+cat >&3 <"$tmp/y7bootstrap"
+copy >&3 "$tmp/y7rc" '$XDG_CONFIG_HOME/y7/y7rc'
+
+print -u3
+print -u3 '# y7 core install'
+export Y7SYS="${opt._14}/y7"
+"$Y7SYS/bin/y7-install-package-files" \
+    --backup --bootstrap "$Y7SYS" |
+    replacedirs >&3
+
+print -u3
+print -u3 '# y7 kps-config install'
+"$Y7SYS/bin/y7-install-package-files" \
+    --backup --bootstrap "${opt._14}/kps-config" |
+    replacedirs >&3
+
+print -u3
+print -u3 '# other kps-config install'
+[[ -f $tmp/install ]] && cat >&3 "$tmp/install"
+
+# Construct vim lists.
+
+gepare \
+    --bootstrap \
+    --define global.config_dir '$XDG_CONFIG_HOME/vim' \
+    --list-type=neo --define list.neo.file "$tmp/neo" \
+    --list-type=vim --define list.vim.file "$tmp/vim" \
+    "${opt._14}/kps-config/config/vim/vim-gepare.toml" \
+    "${opt._14}/kps-config/config/vim/vim-packages.toml" |
+        replacedirs >"$tmp/vimbootstrap"
+
+print -u3 '# vim'
+cat >&3 <"$tmp/vimbootstrap"
+copy >&3 "$tmp/neo" '$XDG_CONFIG_HOME/vim/neo-packages.vim'
+copy >&3 "$tmp/vim" '$XDG_CONFIG_HOME/vim/vim-packages.vim'
