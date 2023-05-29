@@ -12,6 +12,8 @@ do
 done
 export EDITOR=ex
 
+export CLICOLOR=0
+export FORCE_COLOR=0
 export NO_COLOR=1
 
 export GCC_COLORS="\
@@ -22,6 +24,3 @@ type-diff=01;32"
 
 export COLOREDLOGS_FIELD_STYLES=
 export COLOREDLOGS_LEVEL_STYLES='debug=22;verbose=21;notice=52;info=0;warning=136,bold;success=22;error=124,bold;critical=1,bold'
-
-
-# vim:set filetype=sh et sts=4 sw=4 ai noci nosi:
