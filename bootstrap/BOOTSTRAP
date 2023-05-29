@@ -4,13 +4,13 @@
 
 ##### Configuration
 
-SHARE=${XDG_DATA_HOME:-$HOME/.local/share}
+: ${SHARE:=${XDG_DATA_HOME:-$HOME/.local/share}}
 
-Y7_SRC='ssh://kevin@datatravelandexperiments.com:1122/~/doc/git/y7'
+Y7_SRC='https://codeberg.org/datatravelandexperiments/'
 Y7_DST="$SHARE/y7"
 
-GEPARE_SRC='ssh://kevin@datatravelandexperiments.com:1122/~/doc/git/gepare.git'
-GEPARE_DST="${SHARE}/gepare"
+# GEPARE_SRC='git@codeberg.org:datatravelandexperiments/gepare.git'
+# GEPARE_DST="${SHARE}/gepare"
 # GEPARE_PIP=pipx
 
 ##### End of configuration
@@ -96,7 +96,10 @@ then
     $GEPARE_PIP --user install gepare
 fi
 
-gepare --refresh --list "$Y7_DST/kps-config/packages.toml"
+gepare --refresh --list \
+    --define global.Y7SRC "$Y7_SRC" \
+    --define global.Y7DST "$Y7_DST" \
+    "$Y7_DST/kps-config/packages.toml"
 
 Y7SYS="$Y7_DST/y7"
 export Y7SYS
