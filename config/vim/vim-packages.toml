@@ -1,16 +1,15 @@
 [global]
 DTE = 'ssh://kevin@datatravelandexperiments.com:1122/doc/hg/vim'
 
-[package.kps-terminal]
-load = true
-packadd = 'packadd'
-vcs = 'hg'
-src = '{DTE}/kps-terminal'
-
 [package.vim-characterize]
 load = true
 vcs = 'git'
 src = 'https://github.com/tpope/vim-characterize.git'
+
+[package.vim-fugitive]
+load = true
+vcs = 'git'
+src = 'https://github.com/tpope/vim-fugitive.git'
 
 [package.kps-fugitive-config]
 load = true
@@ -18,21 +17,16 @@ vcs = 'hg'
 src = '{DTE}/kps-fugitive-config'
 before = 'vim-fugitive'
 
-[package.vim-fugitive]
+[package.vim-gitgutter]
 load = true
 vcs = 'git'
-src = 'https://github.com/tpope/vim-fugitive.git'
+src = 'https://github.com/airblade/vim-gitgutter.git'
 
 [package.kps-gitgutter-config]
 load = true
 vcs = 'hg'
 src = '{DTE}/kps-gitgutter-config'
 before = 'vim-gitgutter'
-
-[package.vim-gitgutter]
-load = true
-vcs = 'git'
-src = 'https://github.com/airblade/vim-gitgutter.git'
 
 [package.vim-lawrencium]
 load = true
@@ -54,11 +48,6 @@ load = true
 vcs = 'git'
 src = 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
 
-[package.lh-vim-lib]
-load = true
-vcs = 'git'
-src = 'https://github.com/LucHermitte/lh-vim-lib.git'
-
 [package.kps-alternate-config]
 load = true
 vcs = 'hg'
@@ -68,6 +57,11 @@ src = '{DTE}/kps-alternate-config'
 load = true
 vcs = 'git'
 src = 'https://github.com/LucHermitte/alternate-lite.git'
+
+[package.lh-vim-lib]
+load = true
+vcs = 'git'
+src = 'https://github.com/LucHermitte/lh-vim-lib.git'
 
 [package.kps-paste]
 load = 'vim'
@@ -84,15 +78,15 @@ load = true
 vcs = 'hg'
 src = '{DTE}/kps-colorcolumn'
 
-[package.kps-ale-config]
-load = 'vim'
-vcs = 'hg'
-src = '{DTE}/kps-ale-config'
-
 [package.ale]
 load = 'vim'
 vcs = 'git'
 src = 'https://github.com/dense-analysis/ale.git'
+
+[package.kps-ale-config]
+load = 'vim'
+vcs = 'hg'
+src = '{DTE}/kps-ale-config'
 
 [package.rust-vim]
 load = true
@@ -109,30 +103,30 @@ load = 'vim'
 vcs = 'git'
 src = 'https://github.com/editorconfig/editorconfig-vim.git'
 
-[package.nvim-lspconfig]
-load = 'neo'
-vcs = 'git'
-src = 'https://github.com/neovim/nvim-lspconfig.git'
-
 [package.nvim-code-action-menu]
 load = 'neo'
 vcs = 'git'
 src = 'https://github.com/weilbith/nvim-code-action-menu.git'
+
+[package.nvim-lspconfig]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/neovim/nvim-lspconfig.git'
 
 [package.kps-nvim-lsp-config]
 load = 'neo'
 vcs = 'hg'
 src = '{DTE}/kps-nvim-lsp-config'
 
-[package.kps-rust-tools-config]
-load = 'neo'
-vcs = 'hg'
-src = '{DTE}/kps-rust-tools-config'
-
 [package.rust-tools]
 load = 'neo'
 vcs = 'git'
 src = 'https://github.com/simrat39/rust-tools.nvim.git'
+
+[package.kps-rust-tools-config]
+load = 'neo'
+vcs = 'hg'
+src = '{DTE}/kps-rust-tools-config'
 
 [package.null-ls]
 load = 'neo'
@@ -149,6 +143,24 @@ load = 'neo'
 vcs = 'git'
 src = 'https://github.com/andrewferrier/wrapping.nvim'
 
+[package.nvim-treesitter]
+load = 'neo'
+vcs = 'git'
+src = 'https://github.com/nvim-treesitter/nvim-treesitter.git'
+
+[package.kps-nvim-treesitter-config]
+load = 'neo'
+vcs = 'hg'
+src = '{DTE}/kps-nvim-treesitter-config'
+
+[package.kps-terminal]
+load = true
+packadd = 'packadd'
+vcs = 'hg'
+src = '{DTE}/kps-terminal'
+
+
+# Not loaded:
 
 [package.vim-HiLinkTrace]
 vcs = 'git'
