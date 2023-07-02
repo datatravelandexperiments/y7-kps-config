@@ -1,8 +1,4 @@
-if [[ $(y7which ls) == */ast/bin/ls ]]
-then
-    eval "function ll { $(y7which ls) -HKl \"\$@\"; }"
-else
-    eval "function ll { $(y7which ls) -Hbl \"\$@\"; }"
-fi
-
-# vim:set filetype=sh et sts=4 sw=4 ai noci nosi:
+function ll
+{
+    ls -qil "$@"
+}
