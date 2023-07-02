@@ -27,6 +27,7 @@ y7installfile --config config/ripgrep ripgrep
 y7installfile --config config/stty
 
 #vim
+y7installfile --config config/nvim/init.lua nvim/
 y7installfile --config config/vim/vimrc vim/
 y7installfile --config config/vim/after vim/
 y7installfile --config config/vim/vim-gepare.toml vim/
