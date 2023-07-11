@@ -35,16 +35,16 @@ fi
 
 PYTHON=$(command -v python)
 PYTHON3=$(command -v python3)
-if test -x $PYTHON
+if test -x "$PYTHON"
 then
-    if ! $PYTHON -c 'import sys; sys.exit(sys.version_info < (3, 11))'
+    if ! "$PYTHON" -c 'import sys; sys.exit(sys.version_info < (3, 11))'
     then
         PYTHON=
     fi
 fi
-if test -x $PYTHON3
+if test -x "$PYTHON3"
 then
-    if ! $PYTHON3 -c 'import sys; sys.exit(sys.version_info < (3, 11))'
+    if ! "$PYTHON3" -c 'import sys; sys.exit(sys.version_info < (3, 11))'
     then
         PYTHON3=
     fi
@@ -93,14 +93,16 @@ then
         git clone "$GEPARE_SRC" "$GEPARE_DST"
     fi
     mkdir -p ~/opt/local/bin
+    GEPARE=~/opt/local/bin/gepare
     {
         echo "#!/bin/sh"
-        echo "$PYTHON3 "$HOME/.local/share/gepare/src/gepare.py" "$@"
-    } >~/opt/local/bin/gepare
-    GEPARE=~/opt/local/bin/gepare
+        echo "\"$PYTHON3\" \"$HOME/.local/share/gepare/src/gepare.py\" \"\$@\""
+    } >"$GEPARE"
+    chmod +x "$GEPARE"
+    PATH="$HOME/opt/local/bin:$PATH"
 elif test -n "$GEPARE_PIP"
 then
-    $GEPARE_PIP install gepare
+    "$GEPARE_PIP" install gepare
     GEPARE=gepare
 fi
 
