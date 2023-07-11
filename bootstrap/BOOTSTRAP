@@ -9,8 +9,8 @@
 Y7_SRC='https://codeberg.org/datatravelandexperiments/'
 Y7_DST="$SHARE/y7"
 
-# GEPARE_SRC='git@codeberg.org:datatravelandexperiments/gepare.git'
-# GEPARE_DST="${SHARE}/gepare"
+GEPARE_SRC='https://codeberg.org/datatravelandexperiments/gepare.git'
+GEPARE_DST="${SHARE}/gepare"
 # GEPARE_PIP=pipx
 
 ##### End of configuration
@@ -56,10 +56,12 @@ elif test -x "$PYTHON"
 then
     mkdir -p ~/opt/prefer/bin
     ln -s "$PYTHON" ~/opt/prefer/bin/python3
+    PYTHON3="$PYTHON"
 elif test -x "$PYTHON3"
 then
     mkdir -p ~/opt/prefer/bin
     ln -s "$PYTHON3" ~/opt/prefer/bin/python
+    PYTHON="$PYTHON3"
 else
     echo >&2 "python 3.11 or later is required"
     exit 1
@@ -90,13 +92,19 @@ then
     then
         git clone "$GEPARE_SRC" "$GEPARE_DST"
     fi
-    PATH="$PATH:$GEPARE_DST/bin"
+    mkdir -p ~/opt/local/bin
+    {
+        echo "#!/bin/sh"
+        echo "$PYTHON3 "$HOME/.local/share/gepare/src/gepare.py" "$@"
+    } >~/opt/local/bin/gepare
+    GEPARE=~/opt/local/bin/gepare
 elif test -n "$GEPARE_PIP"
 then
-    $GEPARE_PIP --user install gepare
+    $GEPARE_PIP install gepare
+    GEPARE=gepare
 fi
 
-gepare --refresh --list \
+$GEPARE --refresh --list \
     --define global.Y7SRC "$Y7_SRC" \
     --define global.Y7DST "$Y7_DST" \
     "$Y7_DST/kps-config/packages.toml"
