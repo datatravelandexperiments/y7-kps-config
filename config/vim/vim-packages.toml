@@ -97,7 +97,7 @@ src = 'https://github.com/rust-lang/rust.vim.git'
 load = true
 vcs = 'git'
 src = 'https://github.com/ziglang/zig.vim.git'
- 
+
 [package.editorconfig-vim]
 load = 'vim'
 vcs = 'git'
@@ -195,6 +195,7 @@ vcs = 'hg'
 src = '{DTE}/kps-show-hi'
 
 [package.kps-themes]
+load = true
 vcs = 'hg'
 src = '{DTE}/kps-themes'
 
