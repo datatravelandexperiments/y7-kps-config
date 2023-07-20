@@ -1,8 +1,13 @@
-umask 002
+if y7uc=$(y7findconfig "${1##*/}")
+then
+    . "$y7uc"
+fi
 
-export LC_COLLATE=C
+umask ${y7umask:-002}
 
-for y7e in nvim vim nvi vi
+export LC_COLLATE=${y7collate:-C}
+
+for y7e in ${y7editors:-nvim vim nvi vi}
 do
     if [[ $(y7which $y7e) == /* ]]
     then

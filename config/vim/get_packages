@@ -1,2 +1,2 @@
 #!/bin/sh
-gepare --refresh --list vim-gepare.toml vim-packages.toml "$@"
+gepare --refresh --list vim-gepare.toml vim-packages*.toml "$@"

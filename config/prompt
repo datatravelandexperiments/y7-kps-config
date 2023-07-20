@@ -3,5 +3,10 @@ then
     y7promptnote ${DTACH_SOCKET##*/}
 elif [[ -n "$SSH_TTY" ]]
 then
-    y7promptnote ${Y7HOST%%.*}
+    y7promptnote ${Y7HOST##$USER-}
+fi
+
+if [[ -n $LC_Y7TAG ]]
+then
+  Y7PTPREFIX="‹${LC_Y7TAG}› "
 fi

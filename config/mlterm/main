@@ -1,4 +1,5 @@
 allow_change_shortcut=true
+bel_mode=none
 bg_color=gray95
 cursor_bg_color=#ff9900
 cursor_fg_color=black
