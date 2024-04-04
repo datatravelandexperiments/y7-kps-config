@@ -168,6 +168,7 @@ include "%L"
 <Multi_key> <v> <underscore>            : "⊻"   U22BB # XOR
 <Multi_key> <l> <n> <a>                 : "⊼"   U22BC # NAND
 <Multi_key> <l> <n> <o>                 : "⊽"   U22BD # NOR
+<Multi_key> <underscore> <underscore>   : "‗"   U2017 # DOUBLE LOW LINE
 
 <Multi_key> <bracketleft> <question>    : "☐"   U2610 # BALLOT BOX
 <Multi_key> <bracketleft> <space>       : "☐"   U2610 # BALLOT BOX
