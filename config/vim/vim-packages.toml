@@ -98,6 +98,11 @@ load = true
 vcs = 'git'
 src = 'https://github.com/ziglang/zig.vim.git'
 
+[package.file-line]
+load = true
+vcs = 'git'
+src = 'https://github.com/bogado/file-line.git'
+
 [package.editorconfig-vim]
 load = 'vim'
 vcs = 'git'
@@ -165,10 +170,6 @@ src = '{DTE}/kps-terminal'
 [package.vim-HiLinkTrace]
 vcs = 'git'
 src = 'https://github.com/gerw/vim-HiLinkTrace.git'
-
-[package.file-line]
-vcs = 'git'
-src = 'https://github.com/bogado/file-line.git'
 
 [package.julia-vim]
 vcs = 'git'
