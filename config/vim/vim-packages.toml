@@ -17,16 +17,16 @@ vcs = 'hg'
 src = '{DTE}/kps-fugitive-config'
 before = 'vim-fugitive'
 
-[package.vim-gitgutter]
+[package.vim-signify]
 load = true
 vcs = 'git'
-src = 'https://github.com/airblade/vim-gitgutter.git'
+src = 'https://github.com/mhinz/vim-signify.git'
 
-[package.kps-gitgutter-config]
+[package.kps-signify-config]
 load = true
 vcs = 'hg'
-src = '{DTE}/kps-gitgutter-config'
-before = 'vim-gitgutter'
+src = '{DTE}/kps-signify-config'
+before = 'vim-signify'
 
 [package.vim-lawrencium]
 load = true
@@ -224,10 +224,15 @@ src = 'https://github.com/natebosch/vim-lsc.git'
 vcs = 'git'
 src = 'https://github.com/prabirshrestha/vim-lsp.git'
 
-[package.vim-signify]
-vcs = 'git'
-src = 'https://github.com/mhinz/vim-signify.git'
-
 [package.YouCompleteMe]
 vcs = 'git'
 src = 'https://github.com/ycm-core/YouCompleteMe.git'
+
+[package.vim-gitgutter]
+vcs = 'git'
+src = 'https://github.com/airblade/vim-gitgutter.git'
+
+[package.kps-gitgutter-config]
+vcs = 'hg'
+src = '{DTE}/kps-gitgutter-config'
+before = 'vim-gitgutter'
