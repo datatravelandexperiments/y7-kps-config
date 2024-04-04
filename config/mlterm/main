@@ -19,7 +19,6 @@ sb_fg_color=gray80
 scrollbar_mode=right
 scrollbar_view_name=thin
 termtype=mlterm
-type_engine=xft
 use_anti_alias=true
 use_login_shell=true
 use_bold_font=true
