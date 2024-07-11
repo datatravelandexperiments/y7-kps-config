@@ -23,3 +23,5 @@ use_anti_alias=true
 use_login_shell=true
 use_bold_font=true
 word_separators=\x20\x09:"`'&()*,;<=>?@[]^{|}
+use_variable_column_width = false
+type_engine = xft
