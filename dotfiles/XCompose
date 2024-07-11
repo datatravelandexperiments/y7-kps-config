@@ -26,13 +26,13 @@ include "%L"
 <dead_greek> <semicolon>                : "ϒ"   U03D2 # GREEK UPSILON WITH HOOK SYMBOL
 <dead_greek> <apostrophe>               : "φᶜ"
 
-<Multi_key> <C> <C>			: "ℂ"	U2102 # DOUBLE-STRUCK CAPITAL C
-<Multi_key> <N> <N>			: "ℕ"	U2115 # DOUBLE-STRUCK CAPITAL N
+<Multi_key> <C> <C>                     : "ℂ" U2102 # DOUBLE-STRUCK CAPITAL C
+<Multi_key> <N> <N>                     : "ℕ" U2115 # DOUBLE-STRUCK CAPITAL N
 <Multi_key> <P> <P>                     : "ℙ"   U2119 # DOUBLE-STRUCK CAPITAL P
-<Multi_key> <Q> <Q>			: "ℚ"	U211A # DOUBLE-STRUCK CAPITAL Q
-<Multi_key> <R> <R>			: "ℝ"	U211D # DOUBLE-STRUCK CAPITAL R
-<Multi_key> <R> <2>			: "ℝ²"
-<Multi_key> <Z> <Z>			: "ℤ"	U2124 # DOUBLE-STRUCK CAPITAL Z
+<Multi_key> <Q> <Q>                     : "ℚ" U211A # DOUBLE-STRUCK CAPITAL Q
+<Multi_key> <R> <R>                     : "ℝ" U211D # DOUBLE-STRUCK CAPITAL R
+<Multi_key> <R> <2>                     : "ℝ²"
+<Multi_key> <Z> <Z>                     : "ℤ" U2124 # DOUBLE-STRUCK CAPITAL Z
 <Multi_key> <e> <e>                     : "ℯ"   U212F # SCRIPT SMALL E
 <Multi_key> <i> <i>                     : "ⅈ"   U2148 # DOUBLE-STRUCK ITALIC SMALL I
 <Multi_key> <less> <colon>              : "↤"   U21A4 # LEFTWARDS ARROW FROM BAR
@@ -176,9 +176,40 @@ include "%L"
 <Multi_key> <bracketleft> <y>           : "☑"   U2611 # BALLOT BOX WITH CHECK
 <Multi_key> <bracketleft> <n>           : "☒"   U2612 # BALLOT BOX WITH X
 <Multi_key> <bracketleft> <x>           : "☒"   U2612 # BALLOT BOX WITH X
-
-<Multi_key> <bracketleft> <bracketleft> : "「"  U300C # LEFT CORNER BRACKET
-<Multi_key> <bracketright> <bracketright> : "」" U300D # RIGHT CORNER BRACKET
+<Multi_key> <bracketleft> <a>               : "⟨"   U27E8 # MATHEMATICAL LEFT ANGLE BRACKET
+<Multi_key> <bracketright> <a>              : "⟩"   U27E9 # MATHEMATICAL RIGHT ANGLE BRACKET
+<Multi_key> <bracketleft> <less>            : "⟨"   U27E8 # MATHEMATICAL LEFT ANGLE BRACKET
+<Multi_key> <bracketright> <greater>        : "⟩"   U27E9 # MATHEMATICAL RIGHT ANGLE BRACKET
+<Multi_key> <bracketleft> <d> <a>           : "⟪"   U27EA # MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+<Multi_key> <bracketright> <d> <a>          : "⟫"   U27EB # MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET
+<Multi_key> <bracketleft> <d> <less>        : "⟪"   U27EA # MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+<Multi_key> <bracketright> <d> <greater>    : "⟫"   U27EB # MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET
+<Multi_key> <bracketleft> <w> <s>           : "⟦"   U27E6 # MATHEMATICAL LEFT WHITE SQUARE BRACKET
+<Multi_key> <bracketright> <w> <s>          : "⟧"   U27E7 # MATHEMATICAL RIGHT WHITE SQUARE BRACKET
+<Multi_key> <bracketleft> <w> <t>           : "⟬"   U27EC # MATHEMATICAL LEFT WHITE TORTOISE SHELL BRACKET
+<Multi_key> <bracketright> <w> <t>          : "⟭"   U27ED # MATHEMATICAL RIGHT WHITE TORTOISE SHELL BRACKET
+<Multi_key> <bracketleft> <minus>           : "⹕"   U2E55 # LEFT SQUARE BRACKET WITH STROKE
+<Multi_key> <bracketright> <minus>          : "⹖"   U2E56 # RIGHT SQUARE BRACKET WITH STROKE
+<Multi_key> <bracketleft> <equal>           : "⹗"   U2E57 # LEFT SQUARE BRACKET WITH DOUBLE STROKE
+<Multi_key> <bracketright> <equal>          : "⹘"   U2E58 # RIGHT SQUARE BRACKET WITH DOUBLE STROKE
+<Multi_key> <bracketleft> <j> <c>           : "「"   U300C # LEFT CORNER BRACKET
+<Multi_key> <bracketright> <j> <c>          : "」"   U300D # RIGHT CORNER BRACKET
+<Multi_key> <bracketleft> <j> <apostrophe>  : "「"   U300C # LEFT CORNER BRACKET
+<Multi_key> <bracketright> <j> <apostrophe> : "」"   U300D # RIGHT CORNER BRACKET
+<Multi_key> <bracketleft> <j> <quotedbl>    : "『"   U300E # LEFT WHITE CORNER BRACKET
+<Multi_key> <bracketright> <j> <quotedbl>   : "』"   U300F # RIGHT WHITE CORNER BRACKET
+<Multi_key> <bracketleft> <c>               : "｢"   UFF62 # HALFWIDTH LEFT CORNER BRACKET
+<Multi_key> <bracketright> <c>              : "｣"   UFF63 # HALFWIDTH RIGHT CORNER BRACKET
+<Multi_key> <braceleft> <braceleft>         : "｢"   UFF62 # HALFWIDTH LEFT CORNER BRACKET
+<Multi_key> <braceright> <braceright>       : "｣"   UFF63 # HALFWIDTH RIGHT CORNER BRACKET
+<Multi_key> <less> <period>                 : "⦑"   U2991 # LEFT ANGLE BRACKET WITH DOT
+<Multi_key> <greater> <period>              : "⦒"   U2992 # RIGHT ANGLE BRACKET WITH DOT
+<Multi_key> <bracketleft> <bracketleft>     : "⟦"  U27E6 # MATHEMATICAL LEFT WHITE SQUARE BRACKET
+<Multi_key> <bracketright> <bracketright>   : "⟧" U27E7 # MATHEMATICAL RIGHT WHITE SQUARE BRACKET
+<Multi_key> <bracketleft> <t>           : "⌜"   U231C # TOP LEFT CORNER
+<Multi_key> <bracketright> <t>          : "⌝"   U231D # TOP RIGHT CORNER
+<Multi_key> <bracketleft> <b>           : "⌞"   U231E # BOTTOM LEFT CORNER
+<Multi_key> <bracketright> <b>          : "⌟"   U231F # BOTTOM RIGHT CORNER
 
 <Multi_key> <s> <0>                     : "⁰"   U2070 # SUPERSCRIPT ZERO
 <Multi_key> <s> <1>                     : "¹"   U00B9 # SUPERSCRIPT ONE
