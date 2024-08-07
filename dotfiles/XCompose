@@ -176,6 +176,10 @@ include "%L"
 <Multi_key> <bracketleft> <y>           : "☑"   U2611 # BALLOT BOX WITH CHECK
 <Multi_key> <bracketleft> <n>           : "☒"   U2612 # BALLOT BOX WITH X
 <Multi_key> <bracketleft> <x>           : "☒"   U2612 # BALLOT BOX WITH X
+<Multi_key> <bracketright> <v>          : "✓"   U2713 # CHECK MARK
+<Multi_key> <bracketright> <y>          : "✓"   U2713 # CHECK MARK
+<Multi_key> <bracketright> <n>          : "✗"   U2717 # BALLOT X
+<Multi_key> <bracketright> <x>          : "✗"   U2717 # BALLOT X
 <Multi_key> <bracketleft> <a>               : "⟨"   U27E8 # MATHEMATICAL LEFT ANGLE BRACKET
 <Multi_key> <bracketright> <a>              : "⟩"   U27E9 # MATHEMATICAL RIGHT ANGLE BRACKET
 <Multi_key> <bracketleft> <less>            : "⟨"   U27E8 # MATHEMATICAL LEFT ANGLE BRACKET
