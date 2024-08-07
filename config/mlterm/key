@@ -2,7 +2,6 @@ Mod4+n=OPEN_SCREEN
 Mod4+v=INSERT_CLIPBOARD
 Mod4+Shift+v=INSERT_SELECTION
 Mod4+o="exesel:xdg-open"
-Mod4+t=OPEN_PTY
 Mod4+grave=NEXT_PTY
 Mod4+Shift+grave=PREV_PTY
 Mod4+F1=HSPLIT_SCREEN
