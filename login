@@ -10,6 +10,6 @@ then
                   sed -n \
                       -e 's/.*Parent window id: \(0x[[:xdigit:]]\+\).*/\1/p') &&
         xprop -id $y7_windowid -remove WM_CLASS &&
-        mlicon $LC_Y7TAG
+        mlicon ${LC_Y7TAG/~(E)^[^[:digit:]]*/}
 fi
 
